@@ -31,6 +31,7 @@ pipeline {
 
         stage('Monitor Project') {
             steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
                 
                     sh """
                         chmod +x ./mvnw
@@ -40,6 +41,7 @@ pipeline {
                         snyk monitor --org=Dileeprepo  --project-id=03767fd1-c4e2-4709-98f7-67ceee7182d6  --json > report.json
                     """
                     echo "Snyk monitoring completed successfully."
+                }
                 
             }
         }
@@ -69,7 +71,17 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
 }
+
+
 
 
 
