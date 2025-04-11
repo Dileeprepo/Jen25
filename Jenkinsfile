@@ -34,10 +34,10 @@ pipeline {
                 
                     sh """
                         chmod +x ./mvnw
-                        snyk auth 
+                        snyk auth 03767fd1-c4e2-4709-98f7-67ceee7182d6
                         snyk code test
                         snyk test --json --severity-threshold=low
-                        snyk monitor --org=  --project-id=  --json > report.json
+                        snyk monitor --org=Dileeprepo  --project-id=03767fd1-c4e2-4709-98f7-67ceee7182d6  --json > report.json
                     """
                     echo "Snyk monitoring completed successfully."
                 
@@ -70,6 +70,8 @@ pipeline {
         }
     }
 }
+
+
 
 
 
