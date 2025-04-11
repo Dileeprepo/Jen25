@@ -31,7 +31,7 @@ pipeline {
 
         stage('Monitor Project') {
             steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                
                     sh """
                         chmod +x ./mvnw
                         snyk auth 
@@ -40,7 +40,7 @@ pipeline {
                         snyk monitor --org=  --project-id=  --json > report.json
                     """
                     echo "Snyk monitoring completed successfully."
-                }
+                
             }
         }
         stage('Maven Compile') {
