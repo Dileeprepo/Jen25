@@ -21,7 +21,7 @@ node {
         
     }
     stage('sonar scan') {
-        sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=simple -Dsonar.host.url=http://13.127.244.224:9000 -Dsonar.login'
+        sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=simple  -Dsonar.host.url=http://3.108.215.87:9000 -Dsonar.login=sqp_5bed43f62bd4f522b958bfe185728dfeb7b25529'
         
     }
 
@@ -32,11 +32,12 @@ node {
     stage('maven deploy') {
         sh 'mvn deploy'
     }
-
-
-
-
 }
+
+
+
+
+
 
 
 
