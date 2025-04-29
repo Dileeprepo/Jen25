@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Code Clone') {
             steps {
-                'git branch: 'main', credentialsId: '2abdcd5c-a3e2-4925-ba64-b25fa1e4b732', url: 'https://github.com/Dileeprepo/SP.git''
+                git branch: 'main', credentialsId: '2abdcd5c-a3e2-4925-ba64-b25fa1e4b732', url: 'https://github.com/Dileeprepo/SP.git'
             }
         }
 
@@ -81,6 +81,8 @@ pipeline {
         }
     }
 }
+
+
 
 
 
