@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Code Clone') {
             steps {
-                git branch: 'main',credentialsId: '2abdcd5c-a3e2-4925-ba64-b25fa1e4b732',url: 'https://github.com/Dileeprepo/SP.git'
+                'git branch: 'main', credentialsId: '2abdcd5c-a3e2-4925-ba64-b25fa1e4b732', url: 'https://github.com/Dileeprepo/SP.git''
             }
         }
 
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Sonar Scan') {
             steps {
-                sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=simple -Dsonar.host.url=http://15.207.88.253:9000 -Dsonar.login=sqp_a45d0d4770633d5abce896e9440e79fd3cf59216'
+                sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=simple -Dsonar.host.url=http://13.232.143.196:9000 -Dsonar.login=sqp_0d8a1b147d177b2dc7ec1d04efead11af6bbdaf5'
 
                     
             }
